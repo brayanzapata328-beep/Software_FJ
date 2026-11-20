@@ -25,6 +25,3 @@ Desarrollar un sistema que permita gestionar clientes, servicios y reservas para
 - Validaciones y excepciones personalizadas.
 - Registro de eventos y errores.
 
-### Almacenamiento
-
-El sistema no utilizará bases de datos. La información se administrará mediante objetos y listas internas.
