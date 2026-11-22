@@ -1,0 +1,125 @@
+2026-11-21 23:00:58 | INFO | === INICIO DE SIMULACIONES SOFTWARE FJ ===
+2026-11-21 23:00:58 | INFO | Gestor de clientes inicializado correctamente
+2026-11-21 23:00:58 | INFO | Gestor de servicios inicializado correctamente
+2026-11-21 23:00:58 | INFO | Gestor de reservas inicializado correctamente
+2026-11-21 23:00:58 | INFO | Cliente registrado: 1094888111
+2026-11-21 23:00:58 | INFO | Simulación 1 completada con éxito: Registro válido de cliente 1
+2026-11-21 23:00:58 | INFO | Cliente registrado: 1094888222
+2026-11-21 23:00:58 | INFO | Simulación 2 completada con éxito: Registro válido de cliente 2
+2026-11-21 23:00:58 | ERROR | Fallo controlado en simulación 3 (Registro inválido de cliente (datos erróneos)): El nombre contiene caracteres no permitidos.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 39, in ejecutar_simulacion
+    resultado = accion()
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 103, in <lambda>
+    Cliente("Usuario123", "ABC123", "correo_sin_arroba", "123")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/modelos/cliente.py", line 37, in __init__
+    self.validar()
+    ~~~~~~~~~~~~^^
+  File "/Users/yimmer/Software_FJ/modelos/cliente.py", line 159, in validar
+    self.nombre = self.__nombre
+    ^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/modelos/cliente.py", line 60, in nombre
+    raise ValueError("El nombre contiene caracteres no permitidos.")
+ValueError: El nombre contiene caracteres no permitidos.
+2026-11-21 23:00:58 | INFO | Servicio registrado: Sala Juntas A | Tipo: ServicioSala | ID: 0b68c9c7-717a-464a-be26-cb6d9073e62c
+2026-11-21 23:00:58 | INFO | Simulación 4 completada con éxito: Creación válida de servicio de sala
+2026-11-21 23:00:58 | INFO | Servicio registrado: Portátil Pro | Tipo: ServicioEquipo | ID: b03fb2ec-bd5d-4b8d-a3fe-cf41e8e80a21
+2026-11-21 23:00:58 | INFO | Simulación 5 completada con éxito: Creación válida de servicio de equipo
+2026-11-21 23:00:58 | INFO | Servicio registrado: Asesoría Python | Tipo: ServicioAsesoria | ID: ea3f247d-d604-4a3f-9c93-83a5dc46bea2
+2026-11-21 23:00:58 | INFO | Simulación 6 completada con éxito: Creación válida de servicio de asesoría
+2026-11-21 23:00:58 | ERROR | Fallo controlado en simulación 7 (Creación inválida de servicio (precio negativo)): El precio base debe ser mayor que cero y finito.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 39, in ejecutar_simulacion
+    resultado = accion()
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 154, in <lambda>
+    ServicioSala("Sala Errónea", "Prueba con precio inválido", -50000, 5, ["TV"])
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/servicios/servicio_sala.py", line 36, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        nombre,
+        ^^^^^^^
+    ...<2 lines>...
+        disponible
+        ^^^^^^^^^^
+    )
+    ^
+  File "/Users/yimmer/Software_FJ/modelos/servicio.py", line 28, in __init__
+    self.precio_base = precio_base
+    ^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/modelos/servicio.py", line 63, in precio_base
+    raise ValueError("El precio base debe ser mayor que cero y finito.")
+ValueError: El precio base debe ser mayor que cero y finito.
+2026-11-21 23:00:58 | INFO | Consulta de cliente realizada: 1094888111
+2026-11-21 23:00:58 | INFO | Servicio consultado por ID: 0b68c9c7-717a-464a-be26-cb6d9073e62c
+2026-11-21 23:00:58 | INFO | Reserva creada: 5bf0b85c-0306-4d95-8b8b-f6d3bc99d5f3 | Cliente: 1094888111 | Servicio: Sala Juntas A
+2026-11-21 23:00:58 | INFO | Reserva consultada: 5bf0b85c-0306-4d95-8b8b-f6d3bc99d5f3
+2026-11-21 23:00:58 | INFO | Reserva confirmada: 5bf0b85c-0306-4d95-8b8b-f6d3bc99d5f3 | Costo total: 257040.0
+2026-11-21 23:00:58 | INFO | Simulación 8 completada con éxito: Reserva y confirmación exitosa de sala
+2026-11-21 23:00:58 | INFO | Consulta de cliente realizada: 1094888222
+2026-11-21 23:00:58 | INFO | Servicio consultado por ID: b03fb2ec-bd5d-4b8d-a3fe-cf41e8e80a21
+2026-11-21 23:00:58 | INFO | Reserva creada: 669212d0-0e4b-423c-9171-72e48c9aa8dd | Cliente: 1094888222 | Servicio: Portátil Pro
+2026-11-21 23:00:58 | INFO | Reserva consultada: 669212d0-0e4b-423c-9171-72e48c9aa8dd
+2026-11-21 23:00:58 | INFO | Reserva confirmada: 669212d0-0e4b-423c-9171-72e48c9aa8dd | Costo total: 428400.0
+2026-11-21 23:00:58 | INFO | Simulación 9 completada con éxito: Reserva y confirmación exitosa de equipos
+2026-11-21 23:00:58 | INFO | Consulta de cliente realizada: 1094888111
+2026-11-21 23:00:58 | INFO | Servicio consultado por ID: b03fb2ec-bd5d-4b8d-a3fe-cf41e8e80a21
+2026-11-21 23:00:58 | ERROR | No fue posible crear la reserva: Se solicitaron 50 unidades, pero solo hay 5 disponibles.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/controladores/gestor_reservas.py", line 104, in crear_reserva
+    raise CapacidadInsuficienteError(
+    ...<3 lines>...
+    )
+utilidades.excepciones.CapacidadInsuficienteError: Se solicitaron 50 unidades, pero solo hay 5 disponibles.
+2026-11-21 23:00:58 | ERROR | Fallo controlado en simulación 10 (Reserva fallida por capacidad/unidades insuficientes): Se solicitaron 50 unidades, pero solo hay 5 disponibles.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 39, in ejecutar_simulacion
+    resultado = accion()
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 194, in <lambda>
+    lambda: gestor_reservas.crear_reserva("1094888111", estado["equipo"].id, 2, unidades=50),
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/controladores/gestor_reservas.py", line 104, in crear_reserva
+    raise CapacidadInsuficienteError(
+    ...<3 lines>...
+    )
+utilidades.excepciones.CapacidadInsuficienteError: Se solicitaron 50 unidades, pero solo hay 5 disponibles.
+2026-11-21 23:00:58 | INFO | Servicio consultado por ID: ea3f247d-d604-4a3f-9c93-83a5dc46bea2
+2026-11-21 23:00:58 | INFO | Disponibilidad modificada: Asesoría Python | Disponible: False
+2026-11-21 23:00:58 | INFO | Consulta de cliente realizada: 1094888111
+2026-11-21 23:00:58 | INFO | Servicio consultado por ID: ea3f247d-d604-4a3f-9c93-83a5dc46bea2
+2026-11-21 23:00:58 | ERROR | No fue posible crear la reserva: El servicio 'Asesoría Python' no está disponible.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/controladores/gestor_reservas.py", line 97, in crear_reserva
+    raise ServicioNoDisponibleError(
+        f"El servicio '{servicio.nombre}' no está disponible."
+    )
+utilidades.excepciones.ServicioNoDisponibleError: El servicio 'Asesoría Python' no está disponible.
+2026-11-21 23:00:58 | ERROR | Fallo controlado en simulación 11 (Reserva fallida por servicio no disponible): El servicio 'Asesoría Python' no está disponible.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 39, in ejecutar_simulacion
+    resultado = accion()
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 202, in reservar_servicio_no_disponible
+    return gestor_reservas.crear_reserva("1094888111", estado["asesoria"].id, 2)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/controladores/gestor_reservas.py", line 97, in crear_reserva
+    raise ServicioNoDisponibleError(
+        f"El servicio '{servicio.nombre}' no está disponible."
+    )
+utilidades.excepciones.ServicioNoDisponibleError: El servicio 'Asesoría Python' no está disponible.
+2026-11-21 23:00:58 | INFO | Reserva consultada: 669212d0-0e4b-423c-9171-72e48c9aa8dd
+2026-11-21 23:00:58 | INFO | Reserva cancelada: 669212d0-0e4b-423c-9171-72e48c9aa8dd
+2026-11-21 23:00:58 | INFO | Reserva consultada: 669212d0-0e4b-423c-9171-72e48c9aa8dd
+2026-11-21 23:00:58 | ERROR | Confirmación de reserva no permitida: Solo se pueden confirmar reservas pendientes.
+utilidades.excepciones.OperacionNoPermitidaError: Solo se pueden confirmar reservas pendientes.
+2026-11-21 23:00:58 | ERROR | Fallo controlado en simulación 12 (Cancelación y operación no permitida al reconfirmar): Solo se pueden confirmar reservas pendientes.
+Traceback (most recent call last):
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 39, in ejecutar_simulacion
+    resultado = accion()
+  File "/Users/yimmer/Software_FJ/presentacion/main.py", line 212, in cancelar_y_reconfirmar
+    return gestor_reservas.confirmar_reserva(estado["reserva2"].id)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yimmer/Software_FJ/controladores/gestor_reservas.py", line 285, in confirmar_reserva
+    raise error
+utilidades.excepciones.OperacionNoPermitidaError: Solo se pueden confirmar reservas pendientes.
+2026-11-21 23:00:58 | WARNING | Simulaciones finalizadas; revise registros/software_fj.log para el detalle.
